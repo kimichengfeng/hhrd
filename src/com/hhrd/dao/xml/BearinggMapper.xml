@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.hhrd.dao.mapper.BearingMapper" >
+
+  <resultMap id="BaseResultMap" type="com.hhrd.model.Bearing">
+    <result column="bear_type" property="bear_type" jdbcType="VARCHAR"/>
+    <result column="old_code" property="old_code" jdbcType="VARCHAR"/>
+    <result column="storage_code" property="storage_code" jdbcType="VARCHAR"/>
+    <result column="jiu5_price" property="jiu5_price" jdbcType="DECIMAL"/>
+    <result column="unit_weight" property="unit_weight" jdbcType="DECIMAL"/>
+    <result column="pack" property="pack" jdbcType="VARCHAR"/>
+  </resultMap>
+
+  <select id="selectByType" resultMap="BaseResultMap">
+    SELECT * FROM  bearing WHERE  bear_type = #{bear_type}
+  </select>
+
+</mapper>
